@@ -1,0 +1,72 @@
+---
+title: "Web Scraping"
+subtitle: "SEST 2024"
+format: 
+   revealjs:
+      smaller: true
+---
+
+# Introdução
+
+## O que é web scraping?
+
+- Envolve acessar, baixar e organizar dados provenientes da web
+
+- É o "terceiro braço" de pessoas que trabalham com ciência de dados
+
+- Em português, "raspagem de dados"
+
+- Não confundir com web crawling
+
+## Por que web scraping?
+
+Tudo o que você vê na internet pode se transformar dados para analisar!
+
+```{r}
+knitr::include_graphics("img/matrix.gif")
+```
+
+# Política do web scraping
+
+## Cuidados
+
+- Risco de derrubar ou comprometer a estabilidade do site
+
+- Risco de ser processado
+
+- Risco de cometer um crime
+
+```{r}
+knitr::include_graphics("img/spiderman.gif")
+```
+
+## Quando usar
+
+- Quando precisamos coletar um volume grande de dados da internet
+
+## Quando não usar
+
+- Existem formas mais simples de obter os dados (API, base de dados, etc.)
+
+- Os termos de uso do site não nos permitem fazer isso
+
+- As informações do site não são públicas
+
+
+# Fluxo do Web Scraping 
+
+##
+
+```{r fluxo-ws}
+knitr::include_graphics("img/cycle.png")
+```
+
+## Tipos de problemas
+
+- **APIs disponíveis**: o site fornece uma forma estruturada e documentada para acessar as páginas (com ou sem necessidade de fazer login).
+
+- **HTML estático**: o site não fornece uma forma estruturada de acessar as páginas, e as páginas são geradas de forma estática (carregam sem necessidade de usar um navegador).
+
+- **APIs escondidas**: o site não fornece uma forma estruturada e documentada para acessar as páginas, mas internamente é alimentado por uma API não documentada, que podemos descobrir e usar.
+
+- **HTML dinâmico**: o site não fornece uma forma estruturada de acessar as páginas, e as páginas são geradas de forma dinâmica.
