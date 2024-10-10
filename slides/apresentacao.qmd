@@ -70,3 +70,37 @@ knitr::include_graphics("img/cycle.png")
 - **APIs escondidas**: o site não fornece uma forma estruturada e documentada para acessar as páginas, mas internamente é alimentado por uma API não documentada, que podemos descobrir e usar.
 
 - **HTML dinâmico**: o site não fornece uma forma estruturada de acessar as páginas, e as páginas são geradas de forma dinâmica.
+
+
+## APIs
+
+.pull-left[
+
+#### 1. Acessar
+
+- Instruções de acesso na **documentação** da API.
+- Geralmente envolve obter um **token** de acesso, que funciona como uma senha.
+
+#### 2. Coletar
+
+- Geralmente são requisições do tipo **GET**.
+- Pode ou não possuir parâmetros para acessar as informações.
+- O resultado geralmente vem num arquivo **json**.
+
+]
+
+.pull-right[
+
+#### 3. Inserir
+
+- Geralmente são requisições do tipo **POST**.
+- Necessariamente possui parâmetros para enviar informações ao servidor.
+
+#### Pacotes
+
+- R: `httr` ou `httr2`.
+- Python: `requests`
+
+]
+
+## Exemplo: Brasil API
