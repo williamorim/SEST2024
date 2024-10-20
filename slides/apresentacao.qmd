@@ -37,7 +37,7 @@ knitr::include_graphics("img/matrix.gif")
 - Risco de cometer um crime
 
 ```{r}
-knitr::include_graphics("img/spiderman.gif")
+knitr::include_graphics("img/mufasa.gif")
 ```
 
 ## Quando usar
@@ -74,8 +74,9 @@ knitr::include_graphics("img/cycle.png")
 
 ## APIs
 
-.pull-left[
+:::: {.columns}
 
+::: {.column width="45%"}
 #### 1. Acessar
 
 - Instruções de acesso na **documentação** da API.
@@ -86,11 +87,14 @@ knitr::include_graphics("img/cycle.png")
 - Geralmente são requisições do tipo **GET**.
 - Pode ou não possuir parâmetros para acessar as informações.
 - O resultado geralmente vem num arquivo **json**.
+:::
 
-]
+::: {.column width="10%"}
 
-.pull-right[
+:::
 
+
+::: {.column width="45%"}
 #### 3. Inserir
 
 - Geralmente são requisições do tipo **POST**.
@@ -98,9 +102,109 @@ knitr::include_graphics("img/cycle.png")
 
 #### Pacotes
 
-- R: `httr` ou `httr2`.
-- Python: `requests`
+R: `httr` ou `httr2`
 
-]
+Python: `requests`
+:::
+
+::::
+
 
 ## Exemplo: Brasil API
+
+```{r}
+knitr::include_graphics("img/cat.gif")
+```
+
+## APIs escondidas
+
+- Nem sempre a API estará documentada
+
+- Neste caso, precisamos descobrir sua existência
+
+- Técnicas mais importantes do profissional de raspagem:
+
+> Inspecionar elemento
+
+> Aba Network
+
+## Exemplo: globoesporte
+
+```{r}
+knitr::include_graphics("img/cat.gif")
+```
+
+
+## HTML
+
+- HTML (Hypertext Markup Language) é uma linguagem de marcação cujo uso é a criação de páginas web. 
+
+- Por trás de todo site há pelo menos um arquivo .html.
+
+```{r, echo=FALSE}
+knitr::include_graphics("img/html1.png")
+```
+
+
+## HTML
+
+- Todo arquivo HTML pode ser dividido em seções que definirão diferentes aspectos da página. 
+- `<head>` descreve metadados, enquanto `<body>` é o corpo da página.
+
+```{r, echo=FALSE}
+knitr::include_graphics("img/html2.png")
+```
+
+## HTML
+
+- Tags (head, body, h1, p, ...) demarcam as seções e sub-seções
+
+- enquanto atributos (charset, style, ...) mudam como essas seções são renderizadas pelo navegador.
+
+```{r, echo=FALSE}
+knitr::include_graphics("img/html3.png")
+```
+
+## HTML
+
+O HTML do exemplo, na verdade, é isso aqui:
+
+```{r, echo=FALSE}
+knitr::include_graphics("img/html_exemplo_tree_paifilho.png")
+```
+
+## XPath - XML Path Language
+
+- Exemplo: coletando todas as tags `<p>` (parágrafos)
+
+```{r, eval = FALSE, echo = TRUE}
+library(xml2)
+
+# Ler o HTML
+html <- read_html("img/html_exemplo.html")
+
+# Coletar todos os nodes com a tag <p>
+nodes <- xml_find_all(html, "//p")
+
+# Extrair o texto contido em cada um dos nodes
+text <- xml_text(nodes)
+text
+```
+
+## Exemplos: html + xpath
+
+```{r}
+knitr::include_graphics("img/cat.gif")
+```
+
+## Outras técnicas de Web Scraping
+
+- APIs com autenticação: API keys
+
+- Páginas com Login: requisições com headers + cookies
+
+- Navegar via CSS Path
+
+- Captchas: modelos que quebram captchas
+
+- Páginas dinâmicas: selenium

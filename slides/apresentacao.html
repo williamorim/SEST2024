@@ -28,6 +28,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="apresentacao_files/libs/revealjs/dist/theme/quarto.css">
   <link href="apresentacao_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -364,7 +429,7 @@
 <li><p>Risco de cometer um crime</p></li>
 </ul>
 
-<img data-src="img/spiderman.gif" class="r-stretch"></section>
+<img data-src="img/mufasa.gif" class="r-stretch"></section>
 <section id="quando-usar" class="slide level2">
 <h2>Quando usar</h2>
 <ul>
@@ -391,10 +456,115 @@
 <section id="tipos-de-problemas" class="slide level2">
 <h2>Tipos de problemas</h2>
 <ul>
-<li><p><strong>APIs disponíveis</strong>: O site fornece uma forma estruturada e documentada para acessar as páginas (com ou sem necessidade de fazer login).</p></li>
-<li><p><strong>APIs escondidas</strong>: O site não fornece uma forma estruturada e documentada para acessar as páginas, mas internamente é alimentado por uma API não documentada, que podemos descobrir e usar.</p></li>
-<li><p><strong>HTML estático</strong>: O site não fornece uma forma estruturada de acessar as páginas, e as páginas são geradas de forma estática (carregam sem necessidade de usar um navegador).</p></li>
-<li><p><strong>HTML dinâmico</strong>: O site não fornece uma forma estruturada de acessar as páginas, e as páginas são geradas de forma dinâmica.</p></li>
+<li><p><strong>APIs disponíveis</strong>: o site fornece uma forma estruturada e documentada para acessar as páginas (com ou sem necessidade de fazer login).</p></li>
+<li><p><strong>HTML estático</strong>: o site não fornece uma forma estruturada de acessar as páginas, e as páginas são geradas de forma estática (carregam sem necessidade de usar um navegador).</p></li>
+<li><p><strong>APIs escondidas</strong>: o site não fornece uma forma estruturada e documentada para acessar as páginas, mas internamente é alimentado por uma API não documentada, que podemos descobrir e usar.</p></li>
+<li><p><strong>HTML dinâmico</strong>: o site não fornece uma forma estruturada de acessar as páginas, e as páginas são geradas de forma dinâmica.</p></li>
+</ul>
+</section>
+<section id="apis" class="slide level2">
+<h2>APIs</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
+<h4 id="acessar">1. Acessar</h4>
+<ul>
+<li>Instruções de acesso na <strong>documentação</strong> da API.</li>
+<li>Geralmente envolve obter um <strong>token</strong> de acesso, que funciona como uma senha.</li>
+</ul>
+<h4 id="coletar">2. Coletar</h4>
+<ul>
+<li>Geralmente são requisições do tipo <strong>GET</strong>.</li>
+<li>Pode ou não possuir parâmetros para acessar as informações.</li>
+<li>O resultado geralmente vem num arquivo <strong>json</strong>.</li>
+</ul>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:45%;">
+<h4 id="inserir">3. Inserir</h4>
+<ul>
+<li>Geralmente são requisições do tipo <strong>POST</strong>.</li>
+<li>Necessariamente possui parâmetros para enviar informações ao servidor.</li>
+</ul>
+<h4 id="pacotes">Pacotes</h4>
+<p>R: <code>httr</code> ou <code>httr2</code></p>
+<p>Python: <code>requests</code></p>
+</div></div>
+</section>
+<section id="exemplo-brasil-api" class="slide level2">
+<h2>Exemplo: Brasil API</h2>
+
+<img data-src="img/cat.gif" class="r-stretch"></section>
+<section id="apis-escondidas" class="slide level2">
+<h2>APIs escondidas</h2>
+<ul>
+<li><p>Nem sempre a API estará documentada</p></li>
+<li><p>Neste caso, precisamos descobrir sua existência</p></li>
+<li><p>Técnicas mais importantes do profissional de raspagem:</p></li>
+</ul>
+<blockquote>
+<p>Inspecionar elemento</p>
+</blockquote>
+<blockquote>
+<p>Aba Network</p>
+</blockquote>
+</section>
+<section id="exemplo-globoesporte" class="slide level2">
+<h2>Exemplo: globoesporte</h2>
+
+<img data-src="img/cat.gif" class="r-stretch"></section>
+<section id="html" class="slide level2">
+<h2>HTML</h2>
+<ul>
+<li><p>HTML (Hypertext Markup Language) é uma linguagem de marcação cujo uso é a criação de páginas web.</p></li>
+<li><p>Por trás de todo site há pelo menos um arquivo .html.</p></li>
+</ul>
+
+<img data-src="img/html1.png" width="256" class="r-stretch"></section>
+<section id="html-1" class="slide level2">
+<h2>HTML</h2>
+<ul>
+<li>Todo arquivo HTML pode ser dividido em seções que definirão diferentes aspectos da página.</li>
+<li><code>&lt;head&gt;</code> descreve metadados, enquanto <code>&lt;body&gt;</code> é o corpo da página.</li>
+</ul>
+
+<img data-src="img/html2.png" width="800" class="r-stretch"></section>
+<section id="html-2" class="slide level2">
+<h2>HTML</h2>
+<ul>
+<li><p>Tags (head, body, h1, p, …) demarcam as seções e sub-seções</p></li>
+<li><p>enquanto atributos (charset, style, …) mudam como essas seções são renderizadas pelo navegador.</p></li>
+</ul>
+
+<img data-src="img/html3.png" width="800" class="r-stretch"></section>
+<section id="html-3" class="slide level2">
+<h2>HTML</h2>
+<p>O HTML do exemplo, na verdade, é isso aqui:</p>
+
+<img data-src="img/html_exemplo_tree_paifilho.png" width="794" class="r-stretch"></section>
+<section id="xpath---xml-path-language" class="slide level2">
+<h2>XPath - XML Path Language</h2>
+<ul>
+<li>Exemplo: coletando todas as tags <code>&lt;p&gt;</code> (parágrafos)</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href=""></a><span class="fu">library</span>(xml2)</span>
+<span id="cb1-2"><a href=""></a></span>
+<span id="cb1-3"><a href=""></a><span class="co"># Ler o HTML</span></span>
+<span id="cb1-4"><a href=""></a>html <span class="ot">&lt;-</span> <span class="fu">read_html</span>(<span class="st">"img/html_exemplo.html"</span>)</span>
+<span id="cb1-5"><a href=""></a></span>
+<span id="cb1-6"><a href=""></a><span class="co"># Coletar todos os nodes com a tag &lt;p&gt;</span></span>
+<span id="cb1-7"><a href=""></a>nodes <span class="ot">&lt;-</span> <span class="fu">xml_find_all</span>(html, <span class="st">"//p"</span>)</span>
+<span id="cb1-8"><a href=""></a></span>
+<span id="cb1-9"><a href=""></a><span class="co"># Extrair o texto contido em cada um dos nodes</span></span>
+<span id="cb1-10"><a href=""></a>text <span class="ot">&lt;-</span> <span class="fu">xml_text</span>(nodes)</span>
+<span id="cb1-11"><a href=""></a>text</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="outras-técnicas-de-web-scraping" class="slide level2">
+<h2>Outras técnicas de Web Scraping</h2>
+<ul>
+<li><p>APIs com autenticação</p></li>
+<li><p>Páginas com Login</p></li>
 </ul>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
