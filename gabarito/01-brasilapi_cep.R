@@ -4,7 +4,7 @@ library(jsonlite)
 url_base <- "https://brasilapi.com.br/api"
 endpoint_cep <- "/cep/v2/"
 
-cep <- "01525001"
+cep <- "01310000"
 
 url_cep <- paste0(url_base, endpoint_cep, cep)
 

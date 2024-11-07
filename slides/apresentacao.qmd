@@ -6,13 +6,33 @@ format:
       smaller: true
 ---
 
+## Sobre esta apresentação
+
+**Autor** 
+
+- William Nilson de Amorim
+- Doutor em Estatística pelo IME-USP; Professor e Cientista de Dados na Curso-R
+- Redes: @wamorim89
+
+<br>
+
+**Curso-R**
+
+- Site: [https://curso-r.com/](https://curso-r.com/)
+- Canal no YouTube: [https://www.youtube.com/@CursoR6](https://www.youtube.com/@CursoR6)
+
+<br>
+
+**Material**: [https://github.com/williamorim/SEST2024](https://github.com/williamorim/SEST2024)
+
+
 # Introdução
 
 ## O que é web scraping?
 
-- Envolve acessar, baixar e organizar dados provenientes da web
+- Envolve acessar, baixar e organizar dados provenientes da web via código
 
-- É o "terceiro braço" de pessoas que trabalham com ciência de dados
+- É uma habilidade muito útil para pessoas que trabalham com ciência de dados
 
 - Em português, "raspagem de dados"
 
@@ -20,7 +40,7 @@ format:
 
 ## Por que web scraping?
 
-Tudo o que você vê na internet pode se transformar dados para analisar!
+Tudo o que você vê na internet pode se transformar em dados para analisar!
 
 ```{r}
 knitr::include_graphics("img/matrix.gif")
@@ -44,13 +64,14 @@ knitr::include_graphics("img/mufasa.gif")
 
 - Quando precisamos coletar um volume grande de dados da internet
 
+- Os dados são públicos
+
+
 ## Quando não usar
 
-- Existem formas mais simples de obter os dados (API, base de dados, etc.)
+- Existem formas mais simples de obter os dados (API, base de dados etc.)
 
-- Os termos de uso do site não nos permitem fazer isso
-
-- As informações do site não são públicas
+- As informações do site não são públicas e os termos de uso do site não nos permitem web scraping
 
 
 # Fluxo do Web Scraping 
@@ -112,6 +133,8 @@ Python: `requests`
 
 ## Exemplo: Brasil API
 
+[https://brasilapi.com.br](https://brasilapi.com.br)
+
 ```{r}
 knitr::include_graphics("img/cat.gif")
 ```
@@ -124,9 +147,7 @@ knitr::include_graphics("img/cat.gif")
 
 - Técnicas mais importantes do profissional de raspagem:
 
-> Inspecionar elemento
-
-> Aba Network
+> Inspecionar elemento + Aba Network
 
 ## Exemplo: globoesporte
 
@@ -191,7 +212,15 @@ text <- xml_text(nodes)
 text
 ```
 
-## Exemplos: html + xpath
+## Exemplo: cotação do dólar
+
+[https://www.bcb.gov.br/estabilidadefinanceira/historicocotacoes](https://www.bcb.gov.br/estabilidadefinanceira/historicocotacoes)
+
+```{r}
+knitr::include_graphics("img/cat.gif")
+```
+
+## Exemplo: Olimpíadas
 
 ```{r}
 knitr::include_graphics("img/cat.gif")
