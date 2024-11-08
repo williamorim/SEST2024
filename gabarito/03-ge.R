@@ -7,7 +7,7 @@ url <- glue::glue(
 res <- httr::GET(url)
 
 res |>
-  httr::content(type = "text/json", encoding = "latin1") |>
+  httr::content(as = "text", encoding = "latin1") |>
   jsonlite::fromJSON() |>
   janitor::clean_names() |>
   tibble::as_tibble() |>
